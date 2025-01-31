@@ -5,6 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .title a {
@@ -22,10 +24,8 @@
   margin: 0 0 1rem;
   line-height: 1.15;
   font-size: 3.6rem;
-}
-
-.title {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .title,
@@ -95,11 +95,8 @@
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-}
-
-.title {
-  text-align: center;
-  margin-bottom: 2rem;
+  min-height: 100vh;
+  padding: 4rem 0;
 }
 
 .addPeopleSection {
@@ -130,13 +127,13 @@
 }
 
 .peopleList {
-  margin-top: 1rem;
+  margin: 20px 0;
 }
 
 .personItem {
+  margin: 5px 0;
   padding: 0.5rem;
   border: 1px solid #ccc;
-  margin-bottom: 0.5rem;
   border-radius: 4px;
 }
 
@@ -167,18 +164,22 @@
 .rankingArea {
   display: flex;
   gap: 2rem;
-  margin-top: 2rem;
+  margin: 2rem 0;
+  justify-content: space-between;
 }
 
 .unrankedPeople, .rankingList {
   flex: 1;
-  min-width: 200px;
+  min-width: 250px;
+  padding: 1rem;
+  background: #f7f7f7;
+  border-radius: 8px;
 }
 
 .draggablePerson {
   padding: 1rem;
   margin: 0.5rem 0;
-  background-color: #f0f0f0;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
   cursor: move;
@@ -186,7 +187,7 @@
 }
 
 .draggablePerson:hover {
-  background-color: #e0e0e0;
+  background-color: #f0f0f0;
 }
 
 .rankingSlot {
@@ -198,15 +199,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
+  background-color: #fff;
 }
 
 .rankingSlot:hover {
   border-color: #999;
 }
 
+.rankingInstruction {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin: 1rem 0;
+}
+
 .nextButton {
-  margin-top: 2rem;
+  display: block;
+  margin: 2rem auto 0;
   padding: 1rem 2rem;
   background-color: #0070f3;
   color: white;
@@ -214,11 +223,238 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 1.1rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .nextButton:hover {
   background-color: #0051a2;
+}
+
+.matchingOptions {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.matchingCard {
+  width: 300px;
+  padding: 1.5rem;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.matchingCard:hover {
+  border-color: #0070f3;
+  transform: translateY(-5px);
+}
+
+.matchingCard h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #0070f3;
+}
+
+.matchingCard p {
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+.type {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #f0f7ff;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #0070f3;
+}
+
+.backLink {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  text-decoration: none;
+  color: #0070f3;
+}
+
+.toggleButtons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.toggleButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #0070f3;
+  background: white;
+  color: #0070f3;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.toggleButton.active {
+  background: #0070f3;
+  color: white;
+}
+
+.listsContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.list {
+  flex: 1;
+  padding: 1rem;
+  background: #f7f7f7;
+  border-radius: 8px;
+}
+
+.listItem {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.resultsSection {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.matchesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.matchCard {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.matchCard:hover {
+  transform: translateY(-3px);
+}
+
+.matchPair {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.candidate, .company {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.matchArrow {
+  font-size: 1.5rem;
+  color: #0070f3;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #0070f3;
+}
+
+.startOverButton {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 1rem 2rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.startOverButton:hover {
+  background-color: #0051a2;
+}
+
+.completeButton {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 1rem 2rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.completeButton:hover {
+  background-color: #218838;
+}
+
+.input {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.button {
+  padding: 5px 10px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.select {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.rankingInput {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.rankingInput label {
+  margin-right: 10px;
+}
+
+.rankings {
+  margin-top: 10px;
+  padding-left: 10px;
+  border-left: 3px solid #0070f3;
 }
